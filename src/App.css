@@ -3,7 +3,7 @@
   top:30%;
   right: 45%;
   text-align: center;
-  height: 325px;
+  height: 327px;
   width: 300px;
   background-color: gray;
   border: 2px solid black;
@@ -17,36 +17,62 @@
   align-items: center;
   position: absolute;
   border-bottom: 2px solid black;
+  background-color: black;
+  color: white
 }
 .top-item{
   margin: 0px 5px 0px 5px
 }
-.left{
-  height: 100%;
-  width: 5px;
-  background-color: black;
-  position: absolute;
-  left: 33%
+
+.box{
+  height: 98px;
+  width: 98px;
+  background-color: chartreuse;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-.right{
-  height: 100%;
-  width: 5px;
-  background-color: black;
+.one{
   position: absolute;
-  left: 66%
+  top: 27px;
 }
-.top{
-  height: 5px;
-  width: 100%;
-  background-color: black;
+.two{
   position: absolute;
-  top: 36%
+  top: 27px;
+  left: 100px;
 }
-.bottom{
-  height: 5px;
-  width: 100%;
-  background-color: black;
+.three{
   position: absolute;
-  top: 69%
+  top: 27px;
+  right: 0px;
+}
+.four{
+  position: absolute;
+  top: 127px;
+}
+.five{
+  position: absolute;
+  top: 127px;
+  left: 100px;
+}
+.six{
+  position: absolute;
+  top: 127px;
+  right: 0px;
+}
+.seven{
+  position: absolute;
+  top: 227px;
+}
+.eight{
+  position: absolute;
+  top: 227px;
+  left: 100px;
+}
+.nine{
+  position: absolute;
+  top: 227px;
+  right: 0px;
 }
 
