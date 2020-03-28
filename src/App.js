@@ -4,16 +4,18 @@ import './App.css';
 function App() {
 
   const [turn, setTurn] = useState('O')
-  const [boxes, setBoxes] = useState(['','','','','','','','',''])
+  const [boxes, setBoxes] = useState([])
 
   function boxClicked(i){
-    let insert = boxes.map().splice(i, 0, [turn])
-    if(boxes[i]){
+    let insert = [...boxes].splice(i, 0, `${turn}`)
+    if(boxes[i] === 'O' || boxes[i] === 'X'){
       window.alert('choose different box')
     }else{
-      (turn === 'X')? setTurn('O'): setTurn('X')
+      console.log(turn)
       setBoxes(insert)
+      console.log(insert)
     }
+    (turn === 'X')? setTurn('O'): setTurn('X')
   }
 
   return (
