@@ -3,49 +3,59 @@ import './App.css';
 
 function App() {
 
+
   const [turn, setTurn] = useState('O')
   const [boxes, setBoxes] = useState([])
-
+  const [counter, setCounter] = useState(1)
+  
   const checker=()=>{
     let b = boxes
-    if(b[0] === b[1] && b[0] === b[2]){
+    if(b[0] !== '' && b[0] === b[1] && b[0] === b[2]){
       setTurn(`${b[0]} Wins`)
-    }else if(b[3] === b[4] && b[3] === b[5]){
+    }
+    if(b[0] !== '' && b[3] === b[4] && b[3] === b[5]){
       setTurn(`${b[3]} Wins`)
-    }else if(b[6] === b[7] && b[6] === b[8]){
+    }
+    if(b[0] !== '' && b[6] === b[7] && b[6] === b[8]){
       setTurn(`${b[6]} Wins`)
-    }else if(b[0] === b[4] && b[0] === b[8]){
+    }
+    if(b[0] !== '' && b[0] === b[4] && b[0] === b[8]){
       setTurn(`${b[0]} Wins`)
-    }else if(b[2] === b[4] && b[2] === b[6]){
+    }
+    if(b[0] !== '' && b[2] === b[4] && b[2] === b[6]){
       setTurn(`${b[2]} Wins`)
-    }else if(b[0] === b[3] && b[0] === b[6]){
+    } 
+    if(b[0] !== '' && b[0] === b[3] && b[0] === b[6]){
       setTurn(`${b[0]} Wins`)
-    }else if(b[1] === b[4] && b[2] === b[7]){
+    } 
+    if(b[0] !== '' && b[1] === b[4] && b[2] === b[7]){
       setTurn(`${b[1]} Wins`)
-    }else if(b[2] === b[5] && b[2] === b[8]){
+    } 
+    if(b[0] !== '' && b[2] === b[5] && b[2] === b[8]){
       setTurn(`${b[2]} Wins`)
     }
-    else{
-      setTurn('Cats Game')
-    }
+    setTurn('Cats Game')
   };
-
+  
   const boxClicked=(i)=>{
     let insert = [...boxes]
     if(boxes[i] === 'O' || boxes[i] === 'X'){
-      window.alert('choose a different box')
+      return window.alert('choose a different box')
     }else{
       insert[i] = turn
       setBoxes(insert)
-    }
-    (turn === 'X')? setTurn('O'): setTurn('X')
+      setCounter(counter+1)
+    };
+    turn === 'X'?setTurn('O'):setTurn('X')
+    console.log(counter)
+    checker()
   };
 
   return (
     <div className="App">
       <div className='top-bar'>
         <div className='top-item'>{`${turn}'s`} Turn</div>
-        <button className='top-item' onClick={() => setBoxes(['', '', '', '', '', '', '', '', ''])}>Reset</button>
+        <button className='top-item' onClick={() => setBoxes([])/setCounter(1)}>Reset</button>
       </div>
       <div className='gamebox'>
       <div className='box one' onClick={() => boxClicked('0')}>{boxes[0]}</div>
