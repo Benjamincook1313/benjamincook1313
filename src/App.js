@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Swal from 'sweetalert2';
 import './App.css';
 
 function App() {
@@ -16,31 +17,31 @@ function App() {
   function checker(){
     const b = boxes
     if(b[0] !== '' && b[0] === b[1] && b[0] === b[2]){
-      window.alert(`${b[0]} Wins`)
+      Swal.fire(`${b[0]} Wins`)
       setActive(false)
     }else if(b[3] !== '' && b[3] === b[4] && b[3] === b[5]){
-      window.alert(`${b[3]} Wins`)
+      Swal.fire(`${b[3]} Wins`)
       setActive(false)
     }else if(b[6] !== '' && b[6] === b[7] && b[6] === b[8]){
-      window.alert(`${b[6]} Wins`)
+      Swal.fire(`${b[6]} Wins`)
       setActive(false)
     }else if(b[0] !== '' && b[0] === b[3] && b[0] === b[6]){
-      window.alert(`${b[0]} Wins`)
+      Swal.fire(`${b[0]} Wins`)
       setActive(false)
     }else if(b[1] !== '' && b[1] === b[4] && b[1] === b[7]){
-      window.alert(`${b[1]} Wins`)
+      Swal.fire(`${b[1]} Wins`)
       setActive(false)
     }else if(b[2] !== '' && b[2] === b[5] && b[2] === b[8]){
-      window.alert(`${b[2]} Wins`)
+      Swal.fire(`${b[2]} Wins`)
       setActive(false)
     }else if(b[0] !== '' && b[0] === b[4] && b[0] === b[8]){
-      window.alert(`${b[0]} Wins`)
+      Swal.fire(`${b[0]} Wins`)
       setActive(false)
     }else if(b[2] !== '' && b[2] === b[4] && b[2] === b[6]){
-      window.alert(`${b[2]} Wins`)
+      Swal.fire(`${b[2]} Wins`)
       setActive(false)
     }else if(counter === 9){
-      window.alert('Cats Game')
+      Swal.fire('Cats Game')
       setActive(false)
     }else{
       return 
@@ -50,7 +51,7 @@ function App() {
   const boxClicked=(i)=>{
     let insert = [...boxes]
     if(boxes[i] === "O" || boxes[i] === "X"){
-      return window.alert('choose a different box')
+      return Swal.fire('choose a different box')
     }else{
       insert[i] = turn
       setBoxes(insert)
