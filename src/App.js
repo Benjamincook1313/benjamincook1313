@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
 
 function App() {
@@ -6,8 +6,12 @@ function App() {
 
   const [turn, setTurn] = useState('O')
   const [boxes, setBoxes] = useState([ '', '', '', '', '', '', '', '', '',])
-  const [counter, setCounter] = useState(1)
+  const [counter, setCounter] = useState(0)
   const [active, setActive] = useState(true)
+
+  useEffect(()=>{
+    checker()
+  });
   
   function checker(){
     const b = boxes
@@ -43,7 +47,7 @@ function App() {
     };
   };
   
-  const boxClicked=async(i)=>{
+  const boxClicked=(i)=>{
     let insert = [...boxes]
     if(boxes[i] === "O" || boxes[i] === "X"){
       return window.alert('choose a different box')
@@ -52,22 +56,21 @@ function App() {
       setBoxes(insert)
       setCounter(counter+1)
     };
-    if(counter !== 9){
-      turn === "X"?setTurn("O"):setTurn("X")
+    if(counter !== 9 && active){
+      turn === "X"?setTurn("O"): setTurn("X")
     }
-    checker()
   };
 
   return (
     <div className="App">
       <div className='top-bar'>
         <div className='top-item'>{`${turn}'s Turn`}</div>
-        <button className='top-item' onClick={() => setBoxes([ '', '', '', '', '', '', '', '', '',])/setCounter(1)}>Reset</button>
+        <button className='top-item' onClick={() => setBoxes([ '', '', '', '', '', '', '', '', '',])/setCounter(0)/setActive(true)}>Reset</button>
       </div>
       <div className='gamebox'>
       <div className='box one' onClick={active? () => boxClicked('0'): null}>{boxes[0].split("'").shift()}</div>
         <div className='box two'onClick={active? () => boxClicked('1'): null}>{boxes[1].split("'").shift()}</div>
-        <div className='box three' onClick={active? () => boxClicked('2'): checker()}>{boxes[2].split("'").shift()}</div>
+        <div className='box three' onClick={active? () => boxClicked('2'): null}>{boxes[2].split("'").shift()}</div>
         <div className='box four' onClick={active? () => boxClicked('3'): null}>{boxes[3].split("'").shift()}</div>
         <div className='box five' onClick={active? () => boxClicked('4'): null}>{boxes[4].split("'").shift()}</div>
         <div className='box six' onClick={active? () => boxClicked('5'): null}>{boxes[5].split("'").shift()}</div>
