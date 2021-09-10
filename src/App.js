@@ -41,7 +41,7 @@ function App() {
       Swal.fire(`${b[2]} Wins`)
       setActive(false)
     }else if(counter === 9){
-      Swal.fire('Cats Game')
+      Swal.fire('Draw')
       setActive(false)
     }else{
       return 
