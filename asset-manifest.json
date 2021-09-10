@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Benjamincook1313/Benjamincook1313/static/css/main.3afec8bf.chunk.css",
+    "main.js": "/Benjamincook1313/Benjamincook1313/static/js/main.1707e4b1.chunk.js",
+    "main.js.map": "/Benjamincook1313/Benjamincook1313/static/js/main.1707e4b1.chunk.js.map",
+    "runtime-main.js": "/Benjamincook1313/Benjamincook1313/static/js/runtime-main.e114b8d3.js",
+    "runtime-main.js.map": "/Benjamincook1313/Benjamincook1313/static/js/runtime-main.e114b8d3.js.map",
+    "static/js/2.3aaf8356.chunk.js": "/Benjamincook1313/Benjamincook1313/static/js/2.3aaf8356.chunk.js",
+    "static/js/2.3aaf8356.chunk.js.map": "/Benjamincook1313/Benjamincook1313/static/js/2.3aaf8356.chunk.js.map",
+    "index.html": "/Benjamincook1313/Benjamincook1313/index.html",
+    "precache-manifest.84d3159842acfdf98081c705ebf3758e.js": "/Benjamincook1313/Benjamincook1313/precache-manifest.84d3159842acfdf98081c705ebf3758e.js",
+    "service-worker.js": "/Benjamincook1313/Benjamincook1313/service-worker.js",
+    "static/css/main.3afec8bf.chunk.css.map": "/Benjamincook1313/Benjamincook1313/static/css/main.3afec8bf.chunk.css.map",
+    "static/js/2.3aaf8356.chunk.js.LICENSE.txt": "/Benjamincook1313/Benjamincook1313/static/js/2.3aaf8356.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e114b8d3.js",
+    "static/js/2.3aaf8356.chunk.js",
+    "static/css/main.3afec8bf.chunk.css",
+    "static/js/main.1707e4b1.chunk.js"
+  ]
+}
